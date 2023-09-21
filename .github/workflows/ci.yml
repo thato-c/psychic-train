@@ -7,6 +7,7 @@ on:
   push:
     branches: 
       - "main"
+      
   pull_request:
     branches: 
       - "main" 
@@ -25,7 +26,7 @@ jobs:
         dotnet-version: 6.0.x
         
     - name: Restore dependencies
-      run: dotnet ../Psychic/Psychic.sln restore
+      run: dotnet restore Psychic/Psychic.sln
       
     - name: Build
       run: dotnet build Psychic/Psychic/Psychic.csproj --no-restore
